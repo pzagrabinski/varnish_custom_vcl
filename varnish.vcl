@@ -24,11 +24,7 @@ sub vcl_deliver {
     # Happens when we have all the pieces we need, and are about to send the
     # response to the client.
     #
-    # You can do accounting or modifying the final object here.
+    # You can do accounting or modifying the final object here
 
-    if (obj.hits > 0) {
-                set resp.http.X-Cache = "HIT";
-        } else {
-                set resp.http.X-Cache = "MISS";
-        }
+    #todo add hit count header using obj.hits
 }
